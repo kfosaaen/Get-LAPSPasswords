@@ -33,7 +33,7 @@ function Get-LAPSPasswords
            Author: Karl Fosaaen - 2015, NetSPI
            Version: Get-LAPSPasswords.psm1 v1.0
            Comments: The technique used to query LDAP was based on the "Get-AuditDSComputerAccount" 
-           function found in Carols Perez's PoshSec-Mod project.  The general idea is based off of  
+           function found in Carlos Perez's PoshSec-Mod project.  The general idea is based off of  
            a Twitter conversation with @_wald0. The bones of this were borrowed (with permission) from 
 		   Scott Sutherland's Get-ExploitableSystems function.
     
