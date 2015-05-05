@@ -26,7 +26,8 @@ function Get-LAPSPasswords
            PS C:\> Get-LAPSPasswords -DomainController 192.168.1.1 -Credential demo.com\administrator | Export-Csv c:\temp\output.csv -NoTypeInformation
         .LINK
            http://www.netspi.com
-           https://github.com/
+           https://github.com/kfosaaen/Get-LAPSPasswords
+		   https://technet.microsoft.com/en-us/library/security/3062591
            
         .NOTES
            Author: Karl Fosaaen - 2015, NetSPI
