@@ -12,7 +12,8 @@ function Get-LAPSPasswords
 		   ms-MCS-AdmPwd attribute should be restricted to privileged accounts.  Also, since the script uses data tables 
 		   to output affected systems the results can be easily piped to other commands such as test-connection or a Export-Csv.
         .EXAMPLE
-           The example below shows the standard command usage. Disabled system are excluded by default. 
+           The example below shows the standard command usage. Disabled system are excluded by default. If your user doesn't
+		   have the rights to read the password, then it will show 0 for Readable.
 		   PS C:\> Get-LAPSPasswords -DomainController 192.168.1.1 -Credential demo.com\administrator | Format-Table -AutoSize
            
            Hostname                    Stored Readable Password       Expiration         
