@@ -25,7 +25,7 @@ function Get-LAPSPasswords
            The example below shows how to write the output to a csv file.
            PS C:\> Get-LAPSPasswords -DomainController 192.168.1.1 -Credential demo.com\administrator | Export-Csv c:\temp\output.csv -NoTypeInformation
         .LINK
-           http://www.netspi.com
+           https://blog.netspi.com/running-laps-around-cleartext-passwords/
            https://github.com/kfosaaen/Get-LAPSPasswords
 		   https://technet.microsoft.com/en-us/library/security/3062591
            
@@ -127,7 +127,9 @@ function Get-LAPSPasswords
             # Set flag if stored password is not available
             if ($CurrentExpiration -eq "NA"){$PasswordStored = 0}
 
+
             if ($CurrentPassword.length -ge 1){$PasswordAvailable = 1}
+
 
             # Add computer to list if it's enabled
             if ($CurrentDisabled  -eq 0){
@@ -138,7 +140,6 @@ function Get-LAPSPasswords
             # Display results
             $TableAdsComputers | Sort-Object {$_.Hostname} -Descending
          }
-
     }
     End
     {
