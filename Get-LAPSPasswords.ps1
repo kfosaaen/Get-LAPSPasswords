@@ -50,6 +50,10 @@ function Get-LAPSPasswords
         [string]$DomainController,
 
         [Parameter(Mandatory=$false,
+        HelpMessage="Computer name to query, default is All")]
+        [string]$Computer,
+
+        [Parameter(Mandatory=$false,
         HelpMessage="Maximum number of Objects to pull from AD, limit is 1,000.")]
         [int]$Limit = 1000,
 
@@ -93,7 +97,14 @@ function Get-LAPSPasswords
         # ----------------------------------------------------------------
         # Grab computer account information from Active Directory via LDAP
         # ----------------------------------------------------------------
+        if ($Computer)
+        {
+        $CompFilter = "(&(objectCategory=Computer)(name=$($Computer)))"
+        }
+        else
+        {
         $CompFilter = "(&(objectCategory=Computer))"
+        }
         $ObjSearcher.PageSize = $Limit
         $ObjSearcher.Filter = $CompFilter
         $ObjSearcher.SearchScope = "Subtree"
